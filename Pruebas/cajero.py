@@ -2,7 +2,7 @@ import os
 
 saldo = 500
 opcion = 0
-pin = 1234
+pin = "1234"
 n_operaciones = 0
 
 ###############################
@@ -16,6 +16,9 @@ def limpiar_pantalla():
 ###############################
 
 while(opcion != 6):
+
+  # MOSTRAR MENÚ
+
   print("===== CAJERO AUTOMÁTICO =====\n1. Consultar saldo\n2. Ingresar dinero\n3. Retirar dinero\n4. Consultar número de operaciones\n5. Cambiar PIN\n6. Salir\n")
   print("Elige una opción: ")
 
@@ -29,6 +32,8 @@ while(opcion != 6):
     limpiar_pantalla()
     continue
 
+  # OPCIÓN 1 -> MOSTRAR SALDO
+
   if(opcion == 1):
     print("Tu saldo actual es: ", saldo)
     print("\n")
@@ -36,9 +41,20 @@ while(opcion != 6):
     input()
     limpiar_pantalla()
 
+  # OPCIÓN 2 -> INGRESAR DINERO
+
   elif(opcion == 2):
     print("Cantidad a ingresar: ")
-    ingreso = int(input())
+
+    try:
+        ingreso = int(input())
+    except ValueError:
+      print("\nOpción inválida!!!\n")
+    
+      print("Pulse Enter para volver al MENÚ...")
+      input()
+      limpiar_pantalla()
+      continue
 
     if(ingreso <= 0):
       print("Cantidad ingresada incorrecta")
@@ -51,11 +67,22 @@ while(opcion != 6):
     input()
     limpiar_pantalla()
 
+  # OPCIÓN 3 -> RETIRAR DINERO
+
   elif(opcion == 3):
     print("Cantidad a retirar: ")
-    retiro = int(input())
 
-    if(retiro >= saldo or retiro <= 0):
+    try:
+      retiro = int(input())
+    except ValueError:
+      print("\nOpción inválida!!!\n")
+  
+      print("Pulse Enter para volver al MENÚ...")
+      input()
+      limpiar_pantalla()
+      continue
+
+    if(retiro > saldo or retiro <= 0):
       print("\nSaldo insuficiente o cantidad a retirar incorrecta\n")
     else:
       saldo = saldo - retiro
@@ -66,6 +93,8 @@ while(opcion != 6):
     input()
     limpiar_pantalla()
 
+  # OPCIÓN 4 -> CONSULTAR Nº OPERACIONES REALIZADAS
+
   elif(opcion == 4):
     print("Número de operaciones realizadas: ", n_operaciones, "\n")
 
@@ -73,16 +102,23 @@ while(opcion != 6):
     input()
     limpiar_pantalla()
 
+  # OPCIÓN 5 -> CAMBIAR PIN
+
   elif(opcion == 5):
     print("PIN actual: ")
-    pin_actual = int(input())
+    pin_actual =input()
 
     if(pin_actual == pin):
-      print("Nuevo PIN: ")
-      pin_nuevo = int(input())
-      pin = pin_nuevo
-      print("PIN cambiado correctamente\n")
-      n_operaciones = n_operaciones + 1
+      print("Nuevo PIN: (El PIN debe formarse con 4 dígitos numéricos)")
+      pin_nuevo = input()
+
+      if(len(pin_nuevo) != len(pin) or pin_nuevo.isdigit() == False):
+        print("Formato del PIN incorrecto")
+      else:
+        pin = pin_nuevo
+        print("PIN cambiado correctamente\n")
+        n_operaciones = n_operaciones + 1
+
     else:
       print("PIN incorrecto\nNo se ha cambiado el PIN")
 
@@ -90,8 +126,13 @@ while(opcion != 6):
     input()
     limpiar_pantalla()
 
+  # OPCIÓN 6 -> EXIT
+
   elif(opcion == 6):
     print("\nGracias por utilizar el cajero. ¡Hasta pronto!\n")
 
   else:
     print("\nOpción no disponible!!!\n")
+    print("Pulse Enter para continuar...")
+    input()
+    limpiar_pantalla()
