@@ -13,6 +13,12 @@ def limpiar_pantalla():
   else:
     os.system('clear')
 
+
+def esperar_y_limpiar(mensaje):
+  print(mensaje)
+  input()
+  limpiar_pantalla()
+
 ###############################
 
 while(opcion != 6):
@@ -27,9 +33,8 @@ while(opcion != 6):
   except ValueError:
     print("\nOpción inválida!!!\n")
 
-    print("Pulse Enter para volver al MENÚ...")
-    input()
-    limpiar_pantalla()
+    esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
+    
     continue
 
   # OPCIÓN 1 -> MOSTRAR SALDO
@@ -37,9 +42,7 @@ while(opcion != 6):
   if(opcion == 1):
     print("Tu saldo actual es: ", saldo)
     print("\n")
-    print("Pulse Enter para continuar...")
-    input()
-    limpiar_pantalla()
+    esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
 
   # OPCIÓN 2 -> INGRESAR DINERO
 
@@ -51,9 +54,8 @@ while(opcion != 6):
     except ValueError:
       print("\nOpción inválida!!!\n")
     
-      print("Pulse Enter para volver al MENÚ...")
-      input()
-      limpiar_pantalla()
+      esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
+      
       continue
 
     if(ingreso <= 0):
@@ -63,9 +65,7 @@ while(opcion != 6):
       n_operaciones = n_operaciones + 1
       print("Dinero ingresado correctamente.\n")
 
-    print("Pulse Enter para continuar...")
-    input()
-    limpiar_pantalla()
+    esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
 
   # OPCIÓN 3 -> RETIRAR DINERO
 
@@ -77,9 +77,8 @@ while(opcion != 6):
     except ValueError:
       print("\nOpción inválida!!!\n")
   
-      print("Pulse Enter para volver al MENÚ...")
-      input()
-      limpiar_pantalla()
+      esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
+      
       continue
 
     if(retiro > saldo or retiro <= 0):
@@ -89,18 +88,14 @@ while(opcion != 6):
       n_operaciones = n_operaciones + 1
       print("Dinero retirado correctamente.\n")
 
-    print("Pulse Enter para continuar...")
-    input()
-    limpiar_pantalla()
+    esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
 
   # OPCIÓN 4 -> CONSULTAR Nº OPERACIONES REALIZADAS
 
   elif(opcion == 4):
     print("Número de operaciones realizadas: ", n_operaciones, "\n")
 
-    print("Pulse Enter para continuar...")
-    input()
-    limpiar_pantalla()
+    esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
 
   # OPCIÓN 5 -> CAMBIAR PIN
 
@@ -122,9 +117,7 @@ while(opcion != 6):
     else:
       print("PIN incorrecto\nNo se ha cambiado el PIN")
 
-    print("Pulse Enter para continuar...")
-    input()
-    limpiar_pantalla()
+    esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
 
   # OPCIÓN 6 -> EXIT
 
@@ -133,6 +126,4 @@ while(opcion != 6):
 
   else:
     print("\nOpción no disponible!!!\n")
-    print("Pulse Enter para continuar...")
-    input()
-    limpiar_pantalla()
+    esperar_y_limpiar("Pulse Enter para volver al MENÚ...")
