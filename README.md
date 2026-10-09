@@ -1,6 +1,6 @@
-## ⚡ Git + GitHub — Chuleta rápida
+## Git + GitHub — Chuleta rápida
 
-### 🆕 Crear programa / rama nueva
+### Crear programa / rama nueva
 
 ```powershell
 git switch main
@@ -14,7 +14,7 @@ git commit -m "Descripción"
 git push -u origin nombre-rama
 ```
 
-### 🔧 Continuar programa existente
+### Continuar programa existente
 
 ```powershell
 git switch nombre-rama
@@ -27,7 +27,7 @@ git commit -m "Descripción"
 git push
 ```
 
-### 🌿 Ramas
+### Ramas
 
 ```powershell
 git branch              # Ver ramas locales
@@ -36,7 +36,7 @@ git switch nombre-rama  # Cambiar
 git switch -c nombre    # Crear + cambiar
 ```
 
-### 🔄 Cambios
+### Cambios
 
 ```powershell
 git status   # Ver cambios
@@ -46,13 +46,13 @@ git push     # Subir
 git pull     # Descargar
 ```
 
-### 📜 Historial
+### Historial
 
 ```powershell
 git log --oneline
 ```
 
-### ⚠️ `src refspec main does not match any`
+### `src refspec main does not match any`
 
 ```powershell
 git add .
@@ -61,6 +61,6 @@ git branch -M main
 git push -u origin main
 ```
 
-### 🧠 Flujo mental
+### Flujo mental
 
 **TRABAJAR → `status` → `add` → `commit` → `push`**
