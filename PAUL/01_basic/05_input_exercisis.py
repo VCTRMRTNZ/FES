@@ -17,7 +17,7 @@ print(f"El tècnic {nom} està instal·lant la xarxa {xarxa}.\n")
 # en Gbps. Mostra quants segons caldrien per transmetre 1 GB de dades.
 # Suposa que 1 GB = 8 Gb i que la velocitat es manté constant.
 
-longitud = float(input("Insereis la longitud de l'enllaç de fibra en Km: "))
+longitud = float(input("Insereix la longitud de l'enllaç de fibra en Km: "))
 velocitat = float(input("Insereix la velocitat de transmissió en Gbps: "))
 
 temps = 8 / velocitat

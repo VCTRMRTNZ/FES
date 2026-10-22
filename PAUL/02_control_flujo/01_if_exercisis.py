@@ -125,19 +125,15 @@ print("\n----------\n")
 lat = float(input("Indica la latència de la connexió de xarxa en ms: "))
 per = float(input("Indica el percentatge de paquets perduts en %: "))
 
-while (lat > 0 and per >= 0 and per <= 100):
+if (lat > 0 and per >= 0 and per <= 100):
     if (lat <= 30 and per <= 1):
         print("Teniu una connexió Excel·lent!!!")
-        break
     elif (lat <= 80 and per <= 3):
         print("Teniu una Bona connexió.")
-        break
     elif (lat <= 150 and per <= 5):
         print("Teniu una conneció Acceptable")
-        break
     else:
         print("Teniu una connexió Deficient!!!")
-        break
 else:
     print("Unitats indocades incorrectes o fora de rang")
 
@@ -165,29 +161,25 @@ exces_plus = consum - 30
 
 cost = 0
 
-while (pla == "B" or pla == "P" and consum >= 0 and exces_basic != 0 and exces_plus != 0):
+if (pla == "B" or pla == "P" and consum >= 0 and exces_basic != 0 and exces_plus != 0):
     if (pla == "B"):
         if (exces_basic >= 0):
             cost = cost_basic + (exces_basic * basic_ad)
             print(f"Excés de {exces_basic} GB")
             print(f"El cost total és de {cost} €")
-            break
         else:
             cost = cost_basic
             print(f"El cost total és de {cost} €")
-            break
     else:
         if (exces_plus >= 0):
             cost = cost_plus + (exces_plus * plus_ad)
             print(f"Excés de {exces_plus} GB")
             print(f"El cost total és de {cost} €")
-            break
         else:
             cost = cost_plus
             print(f"El cost total és de {cost} €")
-            break
 else:
-    print("Pla desconegut o rang de consum incorrecte...")        
+    print("Plà desconegut o rang de consum incorrecte...")        
 
 ###
 print("\n----------\n")
@@ -296,7 +288,7 @@ alternativa = input("Existèix cap alternativa de connexió (SI/NO): ")
 
 if (servei_critic in ("SI", "NO") and alternativa in ("SI", "NO")):
     if (u_afectats >= 0):
-
+        
         if (servei_critic == "SI" and alternativa == "NO"):
             print("Incidéncia en estat CRÍTIC!!!")
         elif (alternativa == "NO" and u_afectats >= 50):
