@@ -9,8 +9,11 @@ print('Python', 'és', 'brutal', sep='-')
 ```
 
 A. Python és brutal
+
 B. Python-és-brutal
+
 C. Pythonésbrutal
+
 D. Python,és,brutal
 
 **Resposta correcta: B**
