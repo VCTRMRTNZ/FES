@@ -7,6 +7,10 @@ tupla_1 = ("Barcelona", "Madrid", "València", "Sevilla", "San Sebastián")
 print(tupla_1[1])
 print(tupla_1[-2])
 
+#####
+print("\n----------\n")
+#####
+
 # 2️⃣ Donada una tupla amb números enters, compta quantes vegades apareix el número 3 a la tupla.
 
 tupla_2 = (1, 2, 3, 3, 3, 4, 5, 3, 4, 5)
@@ -14,6 +18,10 @@ tupla_2 = (1, 2, 3, 3, 3, 4, 5, 3, 4, 5)
 rep = tupla_2.count(3)
 
 print(f"El número 3 es repeteix {rep} vegades")
+
+#####
+print("\n----------\n")
+#####
 
 # 3️⃣ Crea una funció que rebi una tupla amb números i retorni una tupla nova amb els números ordenats de menor a major.
 
