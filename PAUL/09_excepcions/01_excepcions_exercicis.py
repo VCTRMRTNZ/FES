@@ -120,7 +120,7 @@ textos = ["-40", "21.5", "85", "86", "avaria", "nan"]
 valides = []
 rebutjades = []
 
-def validar_temperatures(textos):
+def validar_temperatures(textos): #La reutilitzo a cada funció, només la declaro un cop
     valides.append(textos)
 
 def filtrar_temperatura(text):
@@ -155,9 +155,6 @@ textos = []
 valides = []
 rebutjades = []
 
-def validar_temperatures(textos):
-    valides.append(textos)
-
 def filtrar_temperatura(text):
     textos = float(text)
 
@@ -187,9 +184,6 @@ textos = ["nan", "inf"]
 
 valides = []
 rebutjades = []
-
-def validar_temperatures(textos):
-    valides.append(textos)
 
 def filtrar_temperatura(text):
     textos = float(text)
